@@ -9,7 +9,7 @@ In order for this to work reliably, you should run it on a mostly-idle machine w
 You can compile and run the program with Cargo like so:
 
 ```bash
-cargo run --release -- -s 2 >> bitflip_log.txt
+cargo run --release -- 2 >> bitflip_log.txt
 ```
 
-The parameter -s for "scale" corresponds to how many Gibibytes of memory we allocated for scanning. I chose the word "scale" because the amount of memory allocated directly determines the physical size of our "detector". A larger detector will detect events more often than a smaller one. All that said, a given amount of memory on one machine may not be physically the same size as that on another machine, so "scale" represents a relationship of proportions and not exact measurements. 
+The single parameter corresponds to how many Gibibytes of memory we allocated for scanning. I refer to this as "scale" because the amount of memory allocated directly determines the physical size of our "detector". A larger detector will detect events more often than a smaller one. All that said, a given amount of memory on one machine may not be physically the same size as that on another machine, so "scale" represents a relationship of proportions and not exact measurements. 

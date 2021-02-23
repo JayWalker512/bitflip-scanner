@@ -8,10 +8,10 @@ use clap::App;
 
 fn main() {
     let matches = App::new("Bitflip Scanner")
-        .args_from_usage("-s [scale] 'Number of Gibibytes to allocate for bitflip detection. Defaults to 1.'")
+        .args_from_usage("[scale] 'Number of Gibibytes to allocate for bitflip detection. Defaults to 1.'")
         .get_matches();
 
-    let scale: usize = value_t!(matches, "scale", usize).unwrap_or(1);
+    let scale = value_t!(matches, "scale", u32).unwrap_or(1) as usize;
     let num_bytes: usize = scale*1024*1024*1024;
     let mut memory: Vec<u8> = Vec::with_capacity(num_bytes);
 
